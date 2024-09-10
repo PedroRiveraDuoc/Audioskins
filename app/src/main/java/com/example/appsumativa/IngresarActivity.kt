@@ -40,7 +40,13 @@ class IngresarActivity : AppCompatActivity() {
 
         // Manejo de "Olvidaste tu contraseña"
         tvForgotPassword.setOnClickListener {
-            Toast.makeText(this, "Función de recuperación de contraseña no implementada", Toast.LENGTH_SHORT).show()
+            val emailRecuperar = etEmailLogin.text.toString().trim()
+
+            if (emailRecuperar.isEmpty()) {
+                Toast.makeText(this, "Por favor, ingrese su correo electrónico para recuperar la contraseña", Toast.LENGTH_SHORT).show()
+            } else {
+                recuperarPassword(emailRecuperar)
+            }
         }
     }
 
@@ -66,6 +72,20 @@ class IngresarActivity : AppCompatActivity() {
             // Aquí puedes redirigir al usuario a otra actividad si es necesario
         } else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Función para simular la recuperación de la contraseña
+    private fun recuperarPassword(email: String) {
+        val sharedPreferences = getSharedPreferences("users", Context.MODE_PRIVATE)
+        val emailGuardado = sharedPreferences.getString("email", null)
+
+        // Si el correo está registrado, mostrar mensaje de recuperación simulado
+        if (email == emailGuardado) {
+            // En lugar de mostrar la contraseña, simulamos el envío de un correo
+            Toast.makeText(this, "Se ha enviado un correo con el paso a paso para recuperar su contraseña", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, "Correo electrónico no registrado", Toast.LENGTH_SHORT).show()
         }
     }
 }
