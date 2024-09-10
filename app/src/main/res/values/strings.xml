@@ -9,4 +9,11 @@
     <string name="password">Contraseña</string>
     <string name="logoaudio">logoAudio</string>
     <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+
+    <string name="nombre">Nombre</string>
+    <string name="apellido_paterno">Apellido Paterno</string>
+    <string name="apellido_materno">Apellido Materno</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+
 </resources>

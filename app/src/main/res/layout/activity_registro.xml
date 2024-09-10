@@ -63,7 +63,75 @@
                 android:textColorHint="#757575"
                 tools:ignore="VisualLintTextFieldSize" />
 
-            <!-- Registrarse -->
+            <!-- Nombre -->
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/nombre"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColorHint="#757575"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Apellido Paterno -->
+            <EditText
+                android:id="@+id/etApellidoPaterno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/apellido_paterno"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColorHint="#757575"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Apellido Materno -->
+            <EditText
+                android:id="@+id/etApellidoMaterno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/apellido_materno"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColorHint="#757575"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Teléfono -->
+            <EditText
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/telefono"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:textColorHint="#757575"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <!-- Dirección -->
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/direccion"
+                android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:textColorHint="#757575"
+                tools:ignore="VisualLintTextFieldSize" />
+
+
+
+
+
+
+
+
+
+            <!-- BOTON Registrarse -->
             <Button
                 android:id="@+id/btnRegistrarse"
                 android:layout_width="match_parent"
@@ -74,6 +142,14 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
