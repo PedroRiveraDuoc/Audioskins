@@ -1,6 +1,7 @@
 package com.example.appsumativa
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -56,6 +57,7 @@ class IngresarActivity : AppCompatActivity() {
         // Recuperamos los valores almacenados
         val emailGuardado = sharedPreferences.getString("email", null)
         val passwordGuardada = sharedPreferences.getString("password", null)
+        val nombreGuardado = sharedPreferences.getString("nombre", "Usuario") // Obtener el nombre registrado
 
         // Log para depurar las credenciales almacenadas y las ingresadas
         Log.d("Login", "Intentando iniciar sesión con: Email=$email, Contraseña=$password")
@@ -69,7 +71,11 @@ class IngresarActivity : AppCompatActivity() {
 
         if (email == emailGuardado && password == passwordGuardada) {
             Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-            // Aquí puedes redirigir al usuario a otra actividad si es necesario
+
+            // Redirigir a la actividad de bienvenida y pasar el nombre del usuario
+            val intent = Intent(this, BienvenidoActivity::class.java)
+            intent.putExtra("nombreUsuario", nombreGuardado)
+            startActivity(intent)
         } else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
         }
